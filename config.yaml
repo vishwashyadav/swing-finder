@@ -1,0 +1,42 @@
+# ------------------------------------------------------------
+#  Swing Trade Finder - settings (edit these, no coding needed)
+# ------------------------------------------------------------
+
+account:
+  capital: 500000            # your trading capital in INR
+  risk_per_trade_pct: 1.0    # max loss per trade if stop hits (% of capital)
+  max_position_pct: 20       # never put more than this % of capital in one stock
+  max_open_positions: 6      # used by the backtest
+
+universe:
+  source: nifty500           # nifty500 (downloaded from NSE) or fallback (bundled list)
+  min_price: 50              # skip penny stocks
+  min_avg_traded_value_cr: 10  # 20-day average daily traded value, in crore
+
+strategy:
+  rs_top_pct: 30             # only stocks in top 30% relative strength vs Nifty (6 months)
+  max_dist_from_high: 0.25   # within 25% of 52-week high
+  base_len: 20               # days used to define the consolidation base
+  max_base_depth: 0.15       # base must be tighter than 15% high-to-low
+  breakout_vol_mult: 1.5     # breakout day volume >= 1.5x 20-day average
+  max_stop_pct: 8            # reject trades where stop is more than 8% away
+  max_gap_up_pct: 3          # skip entry if stock opens >3% above signal close
+
+exits:
+  target1_r: 2.0             # book half at 2x risk, move stop to breakeven
+  target2_r: 3.0             # indicative second target
+  trail: ema20               # trail remaining half: exit on close below 20 EMA
+  time_stop_days: 15         # exit if target 1 not reached in 15 trading days
+  max_hold_days: 40
+
+regime:                      # position size multiplier by Nifty trend
+  Bullish: 1.0               # Nifty > 200 DMA and 50 DMA > 200 DMA
+  Neutral: 0.5               # Nifty > 200 DMA but 50 DMA below
+  Bearish: 0.0               # Nifty < 200 DMA -> watch only, no new buys (set 0.25 to trade small)
+
+report:
+  min_ideas: 5               # always show at least this many ideas (A-grade first, then watchlist)
+  max_ideas: 10
+
+costs:
+  per_side_pct: 0.15         # brokerage + STT + stamp + GST + slippage, per side (backtest)
