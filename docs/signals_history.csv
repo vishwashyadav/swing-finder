@@ -1,0 +1,6 @@
+ticker,grade,setup,entry,stop,risk_pct,target1,target1_pct,target2,qty,invest,max_loss,score,rs_pct,dist_high,date,regime
+PNB.NS,Watch,Near-breakout (buy-stop),145.43,137.93,5.16,160.43,10.31,167.93,333,48428.28,2497.22,81.8,92.81,0.02,2026-11-13,Neutral
+HONASA.NS,Watch,Near-breakout (buy-stop),517.98,481.48,7.05,590.99,14.1,627.5,68,35222.91,2482.37,80.5,94.29,0.03,2026-11-13,Neutral
+PETRONET.NS,Watch,Near-breakout (buy-stop),332.66,316.41,4.89,365.17,9.77,381.42,153,50897.59,2486.58,79.0,81.82,0.04,2026-11-13,Neutral
+PAYTM.NS,Watch,Near-breakout (buy-stop),1963.92,1832.73,6.68,2226.3,13.36,2357.49,19,37314.48,2492.64,78.9,97.67,0.01,2026-11-13,Neutral
+KALYANKJIL.NS,Watch,Near-breakout (buy-stop),719.49,662.74,7.89,832.99,15.78,889.74,44,31657.39,2497.03,77.2,99.37,0.03,2026-11-13,Neutral
